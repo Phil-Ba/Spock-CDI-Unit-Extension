@@ -1,0 +1,36 @@
+group 'at.bayava'
+version '0.1-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'idea'
+
+configurations {
+	provided
+	compile.extendsFrom provided
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+}
+
+idea {
+	module {
+		downloadSources = true
+		downloadJavadoc = true
+	}
+}
+
+dependencies {
+	compile 'org.codehaus.groovy:groovy-all:2.+'
+	compile 'org.apache.logging.log4j:log4j-core:2.+'
+	compile 'org.apache.logging.log4j:log4j-slf4j-impl:2.+'
+	compile 'org.spockframework:spock-core:1.0-groovy-2.4'
+	compile 'org.jglue.cdi-unit:cdi-unit:3.+'
+	compile 'org.javassist:javassist:3.+'
+	//	testCompile 'com.cyrusinnovation:mockito-groovy-support:1.+'
+	//	testCompile 'org.mockito:mockito-core:1.+'
+	//	testCompile 'org.jboss.weld:weld-core:2.2.4.Final'
+}
+
+
